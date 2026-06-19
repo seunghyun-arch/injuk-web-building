@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인적(人迹) | WORK</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" id="menuBtn" style="cursor: pointer; font-size: 24px;">☰</div>
+        <h1 class="logo"><a href="home.html">인적</a></h1>
+        <div class="nav-icons">
+            <span><a href="home.html">🔍</a></span>
+            <span><a href="home.html">👤</a></span>
+            <span><a href="home.html">🛒</a></span>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="close-btn" id="closeBtn">✕</div>
+        <ul class="sidebar-links">
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="#">SHOP</a></li>
+            <li><a href="class.html">CLASS</a></li>
+            <li><a href="work.html">WORK</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="#">NOTICE</a></li>
+        </ul>
+    </nav>
+
+    <main class="work-main">
+        <div class="header-spacer" style="height: 140px; width: 100%;"></div>
+        
+        <section class="exhibition-info">
+            <h2>Injuk Ceramics Open Studio (2025)</h2>
+
+            <div class="info-block">
+                <p>전시명:《Embodied Traces》</p>
+                <p>전시 형태: Injuk Ceramics Open Studio</p>
+                <p>전시 기간: 2025년 1월 28일 - 1월 29일</p>
+                <p>전시 장소: 인적 세라믹 (Injuk Ceramics), 서울특별시 용산구 두텁바위로 40길 3</p>
+                <p>참여 작가: 정유진, 양현정, 정은우, 김혜민, 장준혁</p>
+                <p>주최 / 주관: Injuk Ceramics</p>
+            </div>
+
+            <div class="essay-block">
+                <p>'Embodied Traces'는 흙을 다루는 손의 감각과 반복된 몸의 움직임, 그리고 그 과정에서 축적된 시간을 기록하는 오픈 스튜디오 형식의 전시이다.<br>
+                이번 오픈 스튜디오는 서로 다른 작업 방식을 지닌 다섯 명의 작가가 하나의 공간 안에서 각자의 시간과 감각을 쌓아온 과정을 공유하는 자리로 기획되었다.<br>
+                전시 제목 Embodied Traces는 작업 과정 속에서 자연스럽게 형성되는 손의 흔적, 유약의 흐름, 표면의 미세한 변화가 곧 작가의 몸과 시간이 새겨진 기록임을 의미한다.</p>
+                <p><strong>정유진 Yujin Jung / Tea Ware and Object Series, 2025</strong><br>
+                은행나무 껍질의 질감을 바탕으로 제작한 다화와 플레이트, 설산(雪山)의 낮과 밤을 모티프로 한 인센스 홀더와 손잡이 컵, 다완을 비롯해 참나무 재유의 은은한 푸른빛이 드러나는 개완과 잔을 포함한 차도구 작업이다. 또한 다수의 테스트를 거친 블루, 그린 눈 유약의 접시와 잔, 오브제와 화병, 분재 기물 등 자연의 표면과 색을 탐구한 작업을 함께 선보인다.</p>
+                <p><strong>양현정 Hyunjeong Yang / Wishing Object, 2025</strong><br>
+                한국의 전통 예술에 담긴 '기원의 마음'에 주목한다. '수(壽)'와 '복(福)'의 상징, 그리고 민화의 요소를 현대적인 시선으로 재해석해 전통의 의미를 이어가면서도 새로운 감각의 도자 작업으로 풀어낸다. 이를 통해 관람자가 복과 안녕을 기원하는 마음을 다시 떠올릴 수 있기를 바란다.</p>
+            </div>
+        </section>
+
+        <section class="slider-container">
+            <div class="slider-track" id="sliderTrack">
+                <div class="slide"><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=2000&auto=format&fit=crop" alt="Work 1"></div>
+                <div class="slide"><img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?q=80&w=2000&auto=format&fit=crop" alt="Work 2"></div>
+                <div class="slide"><img src="https://images.unsplash.com/photo-1603533867307-b354255e3c32?q=80&w=2000&auto=format&fit=crop" alt="Work 3"></div>
+            </div>
+            <button class="slider-btn prev" id="prevBtn">&#11094;</button>
+            <button class="slider-btn next" id="nextBtn">&#10095;</button>
+        </section>
+    </main>
+
+    <footer>
+        <ul class="footer-links">
+            <li><a href='#'>이용약관</a></li>
+            <li><a href='#'>개인정보처리방침</a></li>
+            <li><a href='#'>사업자정보확인</a></li>
+        </ul>
+        <p>상호: 인적 | 대표: 정유진 | 개인정보관리책임자: 정유진 | 이메일: injukofficial@naver.com</p>
+        <p>주소: 서울시 용산구 두텁바위로40길 3, 1층 | 사업자등록번호: 854-10-02802 | 통신판매: 2025-서울용산-0151</p>
+        <p>Copyright © 2025 인적 All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="slider.js"></script>
+</body>
+</html>
