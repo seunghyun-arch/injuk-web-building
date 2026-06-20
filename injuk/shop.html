@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인적(人迹) | SHOP</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_shop.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" id="menuBtn" style="cursor: pointer; font-size: 24px;">☰</div>
+        <h1 class="logo"><a href="home.html">인적</a></h1>
+        <div class="nav-icons">
+            <span><a href="home.html">🔍</a></span>
+            <span><a href="login.html">👤</a></span>
+            <span><a href="cart.html">🛒</a></span>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="close-btn" id="closeBtn">✕</div>
+        <ul class="sidebar-links">
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="shop.html">SHOP</a></li>
+            <li><a href="class.html">CLASS</a></li>
+            <li><a href="work.html">WORK</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="notice.html">NOTICE</a></li>
+        </ul>
+    </nav>
+
+    <main class="shop-main">
+        <div class="header-spacer" style="height: 140px; width: 100%;"></div>
+
+        <div class="shop-container">
+            <aside class="shop-categories">
+                <ul>
+                    <li><a href="#" class="active">ALL</a></li>
+                    <li><a href="#">Color</a></li>
+                    <li><a href="#">Mono</a></li>
+                    <li><a href="#">Neutral</a></li>
+                </ul>
+            </aside>
+
+            <section class="product-grid">
+                <div class="product-card">
+                    <a href="product_detail.html">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=800&auto=format&fit=crop" alt="cup & plate">
+                        </div>
+                        <div class="product-info">
+                            <h3>cup & plate for coffee</h3>
+                            <p>42,000원</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="product-card">
+                    <a href="product_detail.html">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?q=80&w=800&auto=format&fit=crop" alt="오늘의 한 잔">
+                            <div class="sold-out-badge">SOLD OUT</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>오늘의 한 잔</h3>
+                            <p>32,000원</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <ul class="footer-links">
+            <li><a href='#'>이용약관</a></li>
+            <li><a href='#'>개인정보처리방침</a></li>
+            <li><a href='#'>사업자정보확인</a></li>
+        </ul>
+        <p>상호: 인적 | 대표: 정유진 | 개인정보관리책임자: 정유진 | 이메일: injukofficial@naver.com</p>
+        <p>주소: 서울시 용산구 두텁바위로40길 3, 1층 | 사업자등록번호: 854-10-02802 | 통신판매: 2025-서울용산-0151</p>
+        <p>Copyright © 2025 인적 All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
