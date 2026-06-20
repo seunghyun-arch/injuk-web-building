@@ -1,0 +1,90 @@
+.contact-main {
+    background-color: #e0e0e0;
+    padding-bottom: 120px;
+}
+
+.contact-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.contact-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: #222222;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.contact-desc {
+    font-size: 15px;
+    color: #222222;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 60px;
+    word-break: keep-all;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    font-size: 14px;
+    color: #222222;
+    margin-bottom: 8px;
+    font-size: 600;
+}
+.form-group input[type=text],
+.form-group input[type=email],
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #e0e0e0;
+    border: 1px solid #656565;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    color:#222222;
+    transition: border-color 0.3s ease;
+    border-radius: 0;
+
+    resize: vertical;
+    overflow-y: auto;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color:#adadad;
+}
+.phone-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.phone-inputs input{
+    width: 80px;
+    text-align: center;
+}
+.phone-inputs .dash {
+    color:#222222;
+}
+.submit-btn {
+    align-self: center;
+    margin-top: 20px;
+    padding: 13px 50px;
+    background-color: transparent;
+    color:#656565;
+    border: 1px solid #656565;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.submit-btn:hover {
+    background-color: #717d7b;
+    color: #e0e0e0;
+}
