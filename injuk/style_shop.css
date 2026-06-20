@@ -32,5 +32,57 @@
     color: #717d7b;
 }
 .product-grid {
-
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+.product-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    backdrop-color: #e0e0e0;
+}
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.product-card:hover .img-wrapper img {
+    transform: scale(1.05);
+}
+.sold-out-badge {
+    position: absolute;
+    bottom: 15px; left: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    color: #222222;
+    font-family: 'DM Serif Display', serif;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 50%;
+    width: 60px; height: 60px;
+    display: flex; justify-content: center; align-items: center;
+    text-align: center;
+}
+.product-info {
+    text-align: center;
+    margin-top: 20px;
+}
+.product-info h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.product-info p {
+    font-family: 'Noto Serif KR', serif;
+    color: #222222;
+    font-size: 14px;
 }

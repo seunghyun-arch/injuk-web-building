@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인적(人迹) | Product</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_product.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" id="menuBtn" style="cursor: pointer; font-size: 24px;">☰</div>
+        <h1 class="logo"><a href="page_home.html">인적</a></h1>
+        <div class="nav-icons">
+            <span><a href="page_home.html">🔍</a></span>
+            <span><a href="page_login.html">👤</a></span>
+            <span><a href="page_cart.html">🛒</a></span>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="close-btn" id="closeBtn">✕</div>
+        <ul class="sidebar-links">
+            <li><a href="page_about.html">ABOUT</a></li>
+            <li><a href="page_shop.html">SHOP</a></li>
+            <li><a href="page_class.html">CLASS</a></li>
+            <li><a href="page_work.html">WORK</a></li>
+            <li><a href="page_contact.html">CONTACT</a></li>
+            <li><a href="page_notice.html">NOTICE</a></li>
+        </ul>
+    </nav>
+
+    <main class="product-main">
+        <div class="header-spacer" style="height: 140px; width: 100%;"></div>
+
+        <section class="product-top">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80" alt="cup & plate">
+            </div>
+
+            <div class="product-info-box">
+                <h2>cup & plate for coffee</h2>
+                <p class="price">42,000원</p>
+                <p class="notice">&lt;손잡이 컵은 품절되었습니다.&gt;</p>
+            </div>
+
+            <div class="info-row">
+                <span class="label">배송비</span>
+                <span class="value">4,000원 (100,000원 이상 구매 시 무료)</span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">세트</span>
+                <select name="setOption" class="custom-select">
+                    <option value="none">선택하세요</option>
+                    <option value="cup">컵 단품 (-10,000)</option>
+                    <option value="plate">플레이트 단품 (-20,000)</option>
+                </select>
+            </div>
+
+            <div class="total-area">
+                <div class="total-row"><span class=label>주문 수량</span><span>0개</span></div>
+                <div class="total-row"><span class=label>총 상품 금액</span><span>0원</span></div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn buy-btn">구매하기</button>
+                <button class="btn cart-btn">장바구니에 담기</button>
+            </div>
+        </section>
+        
+        <section class="product-description">
+            <img src="https://images.unsplash.com/photo-1603533867307-b354255e3c32?q=80" alt="detail view">
+            <div class="desc-text">
+                <p>직접 개발한 자체 제작 유약으로 완성된 손잡이 컵으로, 사진에서도 느껴지는 섬세한 질감이 살아있으면서도 손에 쥐었을 때 놀라울 만큼 매끄럽고 부드러운 촉감을 선사합니다...</p>
+                <br>
+                <p>컬러는 자연의 숨결을 담아낸 세 가지로 만나보실 수 있습니다.</p>
+                <ul>
+                    <li>그린 (Green): 봄의 싱그러운 온기를 머금은 초록색입니다.</li>
+                    <li>블루 (Blue Sky): 푸른 하늘의 탁 트인 평온함을 담았습니다.</li>
+                    <li>핑크브라운 (Pink-Brown): 포근하고 아늑한 대지의 따스함을 전합니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="product-qna">
+            <h3>Q & A</h3>
+            <p>상품에 대해 궁금한 점을 남겨주세요.</p>
+            <form action="#">
+                <textarea placeholder="질문 내용을 입력해주세요." rows="4"></textarea>
+                <button type="submit">문의 등록하기</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <ul class="footer-links">
+            <li><a href='#'>이용약관</a></li>
+            <li><a href='#'>개인정보처리방침</a></li>
+            <li><a href='#'>사업자정보확인</a></li>
+        </ul>
+        <p>상호: 인적 | 대표: 정유진 | 개인정보관리책임자: 정유진 | 이메일: injukofficial@naver.com</p>
+        <p>주소: 서울시 용산구 두텁바위로40길 3, 1층 | 사업자등록번호: 854-10-02802 | 통신판매: 2025-서울용산-0151</p>
+        <p>Copyright © 2025 인적 All rights reserved.</p>
+    </footer>
+
+    <script src="motion_script.js"></script>
+</body>
+</html>
