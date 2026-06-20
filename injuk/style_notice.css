@@ -1,0 +1,83 @@
+.notice-main {
+    background-color: #e0e0e0;
+    padding-bottom: 120px;
+    min-height: 100vh;
+}
+.notice-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.notice-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: #222222;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+.notice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Noto Serif KR', serif;
+}
+.notice-table thead th {
+    border-top: 2px solid #656565;
+    border-bottom: 1px solid #656565;
+    padding: 15px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222222;
+}
+.notice-table tbody td {
+    border-bottom: 1px solid #adadad;
+    padding: 15px 0;
+    font-size: 14px;
+    color: #222222;
+}
+.col-num { width: 10%; }
+.col-title { width: 50%; }
+.col-author { width: 15%; }
+.col-view { width: 10%; }
+.col-date { width: 15%; }
+
+.notice-table td.title {
+    text-align: left;
+    padding-left: 20px;
+}
+.notice-table td.title a {
+    color: #222222;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.notice-table td.title a:hover {
+    color: #adadad;
+    text-decoration: underline;
+}
+.search-area {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.search-area input {
+    width: 250px;
+    padding: 10px 15px;
+    border: 1px solid #656565;
+    background-color: #e0e0e0;
+    font-family: 'Noto Serif KR', serif;
+    outline: none;
+}
+.search-area button {
+    padding: 10px 25px;
+    background-color: #e0e0e0;
+    border: 1px solid #656565;
+    font-family: 'Noto Serif KR', serif;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.search-area button:hover {
+    background-color: #717d7b;
+    border: 1px solid #e0e0e0;
+    color: #e0e0e0;
+}

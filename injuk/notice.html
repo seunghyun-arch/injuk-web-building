@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인적(人迹) | ABOUT</title>
-
+    <title>인적(人迹) | WORK</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_notice.css">
 </head>
 <body>
     <header>
@@ -36,28 +39,29 @@
         </ul>
     </nav>
 
-    <main class="about-main">
-        <section class="about-hero">
-            <h2 class="about-title">사람의 흔적이 머무는 곳</h2>
-        </section>
-        <section class="about-story">
-            <p>
-                흙은 거짓말을 하지 않습니다.<br>
-                손끝의 온도와 머무른 시간만큼, 형태는 다듬어지고 단단해집니다.
-            </p>
-            <p>
-                인적(人迹)은 화려한 기교보다는<br>
-                자연의 색과 흙 본연의 거친 듯 따뜻한 질감을 사랑합니다.<br>
-                우리의 일상 속에 조용히 스며들어, 오랜 시간 곁을 지키는 기물을 빚습니다.
-            </p>
-            <p>
-                느리고 투박하더라도,<br>
-                쓰는 이의 삶과 결을 함께하며 시간의 흔적을 담아내는 도자기.<br>
-                그것이 인적이 지향하는 아름다움입니다.
-            </p>
+    <main class="notice-main">
+        <div class="header-spacer" style="height: 160px; width: 100%;"></div>
 
-            <div class="signature">
-                도예가 정유진
+        <section class="notice-section">
+            <h2 class="notice-title">NOTICE</h2>
+
+            <table class="notice-table">
+                <thread>
+                    <tr>
+                        <th class="col-num">번호</th>
+                        <th class="col-title">제목</th>
+                        <th class="col-author">글쓴이</th>
+                        <th class="col-views">조회수</th>
+                        <th class="col-date">등록일</th>
+                    </tr>
+                </thread>
+                <tbody id="noticeList">
+                    </tbody>
+            </table>
+
+            <div class="search-area">
+                <input type="text" placeholder="검색어를 입력하세요" id="searchInput">
+                <button type="button" id="searchBtn">검색</button>
             </div>
         </section>
     </main>
@@ -74,5 +78,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="notice.js"></script>
 </body>
 </html>
