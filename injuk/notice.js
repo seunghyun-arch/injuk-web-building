@@ -1,39 +1,104 @@
-// 1. 임시 공지사항 데이터 (나중에는 서버에서 이 배열을 통째로 받아옵니다)
+// notice.js 파일 내용 전체 교체
+
+// 1. 기존 데이터 배열
 const notices = [
     { id: 3, type: '공지', title: '개완 리뉴얼 및 입점소식', author: '관리자', views: 29, date: '2026.05.20 14:33' },
     { id: 2, type: '공지', title: '홈페이지 업데이트', author: '관리자', views: 65, date: '2026.04.09 18:41' },
     { id: 1, type: '공지', title: '공지사항', author: '관리자', views: 449, date: '2025.01.25 23:24' }
 ];
 
-// 2. HTML에서 공지사항 목록이 들어갈 빈 공간(tbody) 찾기
+// 💡 2. 가상의 로그인 유저 정보 설정 (테스트용)
+// 팩트 체크: 이 이메일을 일반 이메일(예: 'user@test.com')로 바꾸면 등록 버튼이 감쪽같이 사라집니다!
+const currentUserEmail = 'noir1979'; 
+const adminEmail = 'noir1979'; // 관리자 고정 이메일
+
+// DOM 요소들 가져오기
 const noticeListContainer = document.getElementById('noticeList');
+const adminArea = document.getElementById('adminArea');
+const writeFormContainer = document.getElementById('writeFormContainer');
 
-// 3. 데이터를 바탕으로 HTML 코드 덩어리를 만들어내는 함수
+// 3. 공지사항 목록 그리기 함수
 function renderNotices(dataArray) {
-    // 기존에 있던 내용을 싹 지웁니다 (검색 기능 등을 위해)
     noticeListContainer.innerHTML = '';
-
-    // 배열에 있는 데이터 개수만큼 반복합니다 (for...of 문)
     for (const notice of dataArray) {
-        
-        // 표의 한 줄(tr) 요소 만들기
         const tr = document.createElement('tr');
-        
-        // 백틱(`)을 사용하면 HTML 코드 안에 변수(${notice.title} 등)를 쉽게 쏙쏙 끼워넣을 수 있습니다!
         tr.innerHTML = `
             <td>${notice.type}</td>
-            <td class="title">
-                <a href="notice_detail.html?id=${notice.id}">${notice.title}</a>
-            </td>
+            <td class="title"><a href="notice_detail.html?id=${notice.id}">${notice.title}</a></td>
             <td>${notice.author}</td>
             <td>${notice.views}</td>
             <td>${notice.date}</td>
         `;
-
-        // 만들어진 한 줄을 화면 빈 공간에 추가
         noticeListContainer.appendChild(tr);
     }
 }
 
-// 4. 페이지가 로딩되자마자 전체 목록 그리기 함수 실행
-renderNotices(notices);
+// 💡 4. 관리자 권한 검사 및 버튼 조건부 렌더링 함수
+function checkAdminPermission() {
+    if (currentUserEmail === adminEmail) {
+        // 관리자가 맞다면 adminArea 공간에 버튼 HTML을 동적으로 삽입합니다.
+        adminArea.innerHTML = `
+            <button type="button" id="writeOpenBtn" style="padding: 12px 30px; background: transparent; border: 1px solid #000; font-family: 'Noto Serif KR', serif; cursor: pointer; transition: all 0.3s;">
+                공지 등록하기
+            </button>
+        `;
+
+        // 방금 만든 버튼에 클릭 이벤트 달기 (글쓰기 폼 토글)
+        document.getElementById('writeOpenBtn').addEventListener('click', () => {
+            if (writeFormContainer.style.display === 'none') {
+                writeFormContainer.style.display = 'block';
+            } else {
+                writeFormContainer.style.display = 'none';
+            }
+        });
+    }
+}
+
+// 💡 5. 실제 새 게시글을 배열에 추가하는 로직
+function setupPostSubmission() {
+    const submitPostBtn = document.getElementById('submitPostBtn');
+    const newTitleInput = document.getElementById('newTitle');
+    const newContentInput = document.getElementById('newContent');
+
+    submitPostBtn.addEventListener('click', () => {
+        const titleText = newTitleInput.value.trim();
+        const contentText = newContentInput.value.trim();
+
+        if (!titleText || !contentText) {
+            alert('제목과 내용을 모두 입력해주세요.');
+            return;
+        }
+
+        // 현재 날짜와 시간 구하기
+        const now = new Date();
+        const formattedDate = `${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2, '0')}.${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+
+        // 1. 새 데이터 객체 생성
+        const newPost = {
+            id: notices.length + 1,
+            type: '공지',
+            title: titleText,
+            author: '관리자',
+            views: 0,
+            date: formattedDate
+        };
+
+        // 2. 기존 배열의 맨 앞에 추가 (unshift)
+        notices.unshift(newPost);
+
+        // 3. 화면에 표를 다시 그리기 (Re-rendering)
+        renderNotices(notices);
+
+        // 4. 입력창 비우고 폼 숨기기
+        newTitleInput.value = '';
+        newContentInput.value = '';
+        writeFormContainer.style.display = 'none';
+
+        alert('새 공지사항이 등록되었습니다.');
+    });
+}
+
+// --- 초기 실행 ---
+renderNotices(notices);      // 1. 표 그리기
+checkAdminPermission();      // 2. 관리자면 버튼 띄우기
+setupPostSubmission();       // 3. 글쓰기 제출 기능 활성화

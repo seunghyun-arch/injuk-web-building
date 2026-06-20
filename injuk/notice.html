@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인적(人迹) | WORK</title>
+    <title>인적(人迹) | NOTICE</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,6 +62,16 @@
             <div class="search-area">
                 <input type="text" placeholder="검색어를 입력하세요" id="searchInput">
                 <button type="button" id="searchBtn">검색</button>
+            </div>
+            <div id="adminArea" style="margin-top: 30px; text-align: right;"></div>
+
+            <div id="writeFormContainer" style="display: none; margin-top: 40px; border-top: 1px solid #222222; padding-top: 30px;">
+                <h3 style="font-family: 'Noto Serif KR', serif; font-size: 18px; margin-bottom: 20px;">새 공지사항 작성</h3>
+                <div style="display: flex; flex-direction: column; gap: 15px; max-width: 600px;">
+                    <input type="text" id="newTitle" placeholder="공지사항 제목을 입력하세요" style="padding: 12px; border: 1px solid #656565; background-color: transparent; font-family: inherit;">
+                    <textarea id="newContent" placeholder="공지사항 내용을 입력하세요" rows="5" style="padding: 12px; border: 1px solid #656565; background-color: transparent; font-family: inherit; resize: none;"></textarea>
+                    <button type="button" id="submitPostBtn" style="padding: 12px; background: #717d7b; color: #e0e0e0; border: none; cursor: pointer; font-family: inherit;">게시하기</button>
+                </div>
             </div>
         </section>
     </main>
