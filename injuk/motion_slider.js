@@ -8,7 +8,7 @@ const totalSlides = slides.length;
 let autoPlayInterval;
 
 function moveToSlide(index) {
-    track.style.transform = 'translateX(-${index * 100}%)';
+    track.style.transform = `translateX(-${index * 100}%)`;
     currentIndex = index;
 }
 

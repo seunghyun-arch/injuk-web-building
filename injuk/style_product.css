@@ -1,67 +1,109 @@
-/* style_product.css */
+/* === 전체 배경 === */
 .product-main {
-    background-color: #e0e0e0; /* 💡 사진을 보니 전체 배경이 살짝 더 짙은 회색이네요 */
+    background-color: #e0e0e0;
     padding-bottom: 120px;
 }
+
+/* === 상단 레이아웃 (정확히 반반 쪼개기) === */
 .product-top {
-    max-width: 1100px;
-    margin: 0 auto 100px auto;
+    max-width: 1200px;
+    margin: 140px auto 100px auto;
     display: flex;
-    gap: 80px;
+    gap: 60px;
     padding: 0 40px;
+    align-items: flex-start;
 }
-.product-image {
-    flex: 1;
-}
-.product-image img {
-    width: 100%;
-    display: block;
-}
-.product-info-box {
-    flex: 1;
+
+/* === 1. 왼쪽 사진 영역 (메인 + 썸네일) === */
+.product-image-section {
+    width: 45%;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 15px;
 }
-.product-info-box h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 28px;
-    font-weight: 400;
-    margin-bottom: 20px;
+
+.main-img {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
 }
-.product-info-box .price {
-    font-size: 18px;
-    color: #656565;
-    margin-bottom: 20px;
+
+.thumbnail-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
-.product-info-box .notice {
-    font-size: 13px;
-    color: #656565;
-    margin-bottom: 40px;
+
+.thumbnail-container img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
 }
-.info-row {
+
+.thumbnail-container img:hover, .thumbnail-container img.active {
+    opacity: 1;
+}
+
+/* === 2. 오른쪽 정보 영역 === */
+.product-info-box {
+    width: 50%;
     display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.product-info-box h2 { 
+    font-family: 'DM Serif Display', serif; 
+    font-size: 32px; 
+    font-weight: 400; 
+    margin-top: 0;
     margin-bottom: 20px;
+    width: 100%;
+}
+
+.product-info-box .price { font-size: 18px; color: #656565; margin-bottom: 25px; }
+.product-info-box .notice { font-size: 13px; color: #656565; margin-bottom: 45px; }
+
+/* 배송비, 세트 행 */
+.info-row { 
+    display: flex;
+    width: 100%;
+    margin-bottom: 25px;
     font-size: 14px;
     align-items: center;
 }
+
 .info-row .label {
-    width: 80px;
+    width: 90px;
     font-weight: 600;
+    color: #656565;
+    flex-shrink: 0;
 }
-.custom-select {
-    padding: 10px;
-    border: 1px solid #222222;
-    background: transparent;
-    font-family: inherit;
-    width: 200px;
+
+.custom-select { 
+    padding: 10px; 
+    border: 1px solid #656565; 
+    background: transparent; 
+    font-family: inherit; 
+    width: 100%;
+    max-width: 250px;
+    outline: none;
 }
+
+/* 결제 정보 행 */
 .total-area {
-    margin-top: 40px;
-    border-top: 1px solid #656565;
-    border-bottom: 1px solid #656565;
-    padding: 20px 0;
+    width: 100%;
+    margin-top: 50px; 
+    border-top: 1px solid #656565; 
+    border-bottom: 1px solid #656565; 
+    padding: 20px 0; 
 }
+
 .total-row {
     display: flex;
     justify-content: space-between;
@@ -70,74 +112,38 @@
 }
 .total-row:last-child { margin-bottom: 0; }
 
+/* 버튼 행 */
 .action-buttons {
     display: flex;
+    width: 100%;
     gap: 15px;
     margin-top: 30px;
 }
-.btn {
+
+.btn { 
     flex: 1;
-    padding: 15px 0;
-    border: 1px solid #656565;
-    background: transparent;
-    cursor: pointer;
+    padding: 18px 0; 
+    border: 1px solid #656565; 
+    background: transparent; 
+    cursor: pointer; 
     font-family: 'Noto Serif KR', serif;
-    transition: all 0.3s;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: all 0.3s; 
 }
-.buy-btn:hover,
-.cart-btn:hover {
-    background: #717d7b; color: #e0e0e0;
-}
-.product-description {
-    max-width: 800px;
-    margin: 0 auto 100px auto;
-    padding: 0 40px;
-}
-.product-description img {
-    width: 100%;
-    margin-bottom: 40px;
-}
-.desc-text {
-    font-size: 15px;
-    line-height: 2;
-    color: #656565;
-}
-.desc-text ul {
-    margin-top: 10px;
-    padding-left: 20px;
-}
-.product-qna {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 60px 40px;
-    border-top: 1px solid #656565;
-}
-.product-qna h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-.product-qna p {
-    font-size: 14px;
-    color: #656565;
-    margin-bottom: 20px;
-}
-.product-qna form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-.product-qna textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #656565;
-    background: #e0e0e0;
-    font-family: inherit;
-    resize: none;
-}
-.product-qna button {
-    align-self: flex-end;
-    padding: 10px 30px;
-    background: #717d7b; color: #e0e0e0; border: none;
-    cursor: pointer; font-family: inherit;
-}
+
+.buy-btn:hover, .cart-btn:hover { background: #717d7b; color: #e0e0e0; }
+
+/* === 3. 하단 설명 및 QnA 영역 === */
+.product-description { max-width: 800px; margin: 0 auto 100px auto; padding: 0 40px; }
+.product-description img { width: 100%; margin-bottom: 40px; }
+.desc-text { font-size: 15px; line-height: 2; color: #656565; }
+.desc-text ul { margin-top: 10px; padding-left: 20px; }
+
+.product-qna { max-width: 800px; margin: 0 auto; padding: 60px 40px; border-top: 1px solid #adadad; }
+.product-qna h3 { font-family: 'DM Serif Display', serif; font-size: 24px; margin-bottom: 10px; }
+.product-qna p { font-size: 14px; color: #656565; margin-bottom: 20px; }
+.product-qna form { display: flex; flex-direction: column; gap: 15px; }
+.product-qna textarea { width: 100%; padding: 15px; border: 1px solid #adadad; background: #e0e0e0; font-family: inherit; resize: none; outline: none;}
+.product-qna button { align-self: flex-end; padding: 10px 30px; background: #717d7b; color: #e0e0e0; border: none; cursor: pointer; font-family: inherit; }

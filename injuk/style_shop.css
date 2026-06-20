@@ -16,8 +16,12 @@
 }
 .shop-categories ul {
     list-style: none;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     padding: 0;
+}
+.shop-categories li {
+    margin-bottom: 28px;
+    line-height: 1.2;
 }
 .shop-categories a {
     text-decoration: none;

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인적(人迹) | SHOP</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_cart.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" id="menuBtn" style="cursor: pointer; font-size: 24px;">☰</div>
+        <h1 class="logo"><a href="page_home.html">인적</a></h1>
+        <div class="nav-icons">
+            <span><a href="page_home.html">🔍</a></span>
+            <span><a href="page_login.html">👤</a></span>
+            <span><a href="page_cart.html">🛒</a></span>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="close-btn" id="closeBtn">✕</div>
+        <ul class="sidebar-links">
+            <li><a href="page_about.html">ABOUT</a></li>
+            <li><a href="page_shop.html">SHOP</a></li>
+            <li><a href="page_class.html">CLASS</a></li>
+            <li><a href="page_work.html">WORK</a></li>
+            <li><a href="page_contact.html">CONTACT</a></li>
+            <li><a href="page_notice.html">NOTICE</a></li>
+        </ul>
+    </nav>
+
+    <main class="cart-main">
+        <section class="cart-section">
+            <h2 class="cart-title">장바구니 (<span id="cartCount">0</span>)</h2>
+
+            <div class="cart-empty-msg" id="emptyCartMsg">
+                <p>장바구니가 비어 있습니다.</p>
+            </div>
+
+            <div class="cart-content" id="cartContent" style="display: none;">
+                <div class="cart-item-list" id="cartItemList">
+                    </div>
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>총 상품금액</span>
+                        <span id="totalPrice">0원</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>배송비</span>
+                        <span id="shippingFee">0원</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>결제예정금액</span>
+                        <span id="finalPrice">0원</span>
+                    </div>
+                    <button class="checkout-btn">주문하기</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <ul class="footer-links">
+            <li><a href='#'>이용약관</a></li>
+            <li><a href='#'>개인정보처리방침</a></li>
+            <li><a href='#'>사업자정보확인</a></li>
+        </ul>
+        <p>상호: 인적 | 대표: 정유진 | 개인정보관리책임자: 정유진 | 이메일: injukofficial@naver.com</p>
+        <p>주소: 서울시 용산구 두텁바위로40길 3, 1층 | 사업자등록번호: 854-10-02802 | 통신판매: 2025-서울용산-0151</p>
+        <p>Copyright © 2025 인적 All rights reserved.</p>
+    </footer>
+
+    <script src="motion_script.js"></script>
+    <script src="motion_cart.js"></script>
+</body>
+</html>

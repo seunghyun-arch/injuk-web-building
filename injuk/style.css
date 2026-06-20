@@ -81,24 +81,27 @@ header .nav-icons span {
     color: #222222;
 }
 .hero p.subtitle {
+    font-weight: 600;
     font-size: 14px;
     margin-bottom: 10px;
     letter-spacing: 1px;
-    color:#656565
+    color:#656565;
 }
 .hero h2 {
+    font-weight: 600;
     font-size: 48px;
     font-weight: normal;
     margin-bottom: 15px;
 }
 .hero p.desc {
+    font-weight: 600;
     font-size: 16px;
     margin-bottom: 30px;
-    color: #222222
+    color: #222222;
 }
 .btn-view {
     padding: 12px 30px;
-    background-color: #656565;
+    background-color: #717d7b;
     color: white;
     border: none;
     cursor: pointer;
@@ -106,7 +109,8 @@ header .nav-icons span {
     transition: background-color 0.3s;
 }
 .btn-view:hover {
-    background-color: #717d7b
+    background-color: #e0e0e0;
+    color: #656565;
 }
 
 /*카테고리 섹션*/
