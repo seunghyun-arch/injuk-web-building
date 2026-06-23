@@ -53,7 +53,7 @@
                     <input type="password" id="password" name="password" placeholder="비밀번호" required>
                 </div>
 
-                <button type="submit" class="login-submit-btn">로그인</button>
+                <button type="button" class="login-submit-btn" onclick="login()">로그인</button>
             </form>
             <div class="login-links">
                 <a href="#">비밀번호 찾기</a>
@@ -74,6 +74,9 @@
         <p>Copyright © 2025 인적 All rights reserved.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <script src="motion_script.js"></script>
+    <script src="motion_login.js"></script>
 </body>
 </html>

@@ -1,27 +1,30 @@
+//수파베이스 설정
+const SUPABASE_URL = 'https://yzqhwldrohbmtodmiinf.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_Uj3wq25mTepMh1m_qoOP2g_L5I6LXGL';
+
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
 async function signup() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const phone = document.getElementById("phone").value;
+    const name = document.getElementById("name").value;
 
-    try {
-        const response = await fetch("http://127.0.0.1:8000/signup", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                email: email,
-                password: password
-            })
-        });
-
-        const result = await response.json();
-        
-        if (response.ok) {
-            alert(result.message);
-            window.location.href = "page_login.html"; // 가입 성공 시 로그인 페이지로 이동
-        } else {
-            alert("가입 실패: " + JSON.stringify(result));
+    const { data, error } = await supabaseClient.auth.signUp({
+        email: email,
+        password: password,
+        options: {
+            data: {
+                phone: phone,
+                name: name,
+            }
         }
-    } catch (error) {
-        console.error("통신 에러:", error);
-        alert("서버와 연결할 수 없습니다.");
+    });
+
+    if (error) {
+        alert("가입 실패: " + error.message);
+    } else {
+        alert("회원가입 완료");
+        window.location.href = "page_login.html";
     }
 }
