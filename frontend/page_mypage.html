@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>인적(人迹)</title>
+
+    <link rel="preconnect" href="https://fonts/googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <meta name="description" content="자연에서 찾은 조용한 아름다움, 도자기 공방 인적(人迹)입니다. 클래스 및 작품 구매 안내.">
+    <meta name="keywords" content="도자기, 도자기공방, 인적, 원데이클래스, 도자기그릇">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_mypage.css">
+</head>
+
+<body>
+    <header>
+        <div class="menu-icon" id="menuBtn" style="cursor: pointer; font-size: 24px;">☰</div>
+        <h1 class="logo"><a href="page_home.html">인적</a></h1>
+        <div class="nav-icons">
+            <span><a href="page_home.html">🔍︎</a></span>
+            <span><a href="#" onclick="handleUserIconClick();return false;">👤</a></span>
+            <span><a href="page_cart.html">🛒</a></span>
+        </div>
+    </header>
+
+    <main class="mypage-container">
+        <div class="mypage-grid">
+            
+            <div class="mypage-left">
+                <section class="mypage-section">
+                    <h3>주문 내역</h3>
+                    <p class="empty-msg">주문 내역이 없습니다.</p>
+                </section>
+                <section class="mypage-section">
+                    <h3>내가 쓴 글</h3>
+                    <p class="empty-msg">내가 쓴 글이 없습니다.</p>
+                </section>
+                <section class="mypage-section">
+                    <h3>쿠폰 내역</h3>
+                    <p class="empty-msg">쿠폰 내역이 없습니다.</p>
+                </section>
+            </div>
+
+            <div class="mypage-right">
+                <section class="mypage-section member-info-section">
+                    <div class="section-header">
+                        <h3>회원 정보</h3>
+                        <button type="button" class="logout-link" onclick="logout()">로그아웃</button>
+                    </div>
+                    
+                    <form class="member-form">
+                        <div class="form-group">
+                            <label>아이디 (이메일)</label>
+                            <input type="email" id="myEmail" readonly style="color: #666;">
+                        </div>
+                        <div class="form-group">
+                            <label>이름</label>
+                            <input type="text" id="myName">
+                        </div>
+                        <div class="form-group">
+                            <label>휴대폰 번호</label>
+                            <div class="phone-inputs">
+                                <input type="text" id="phone1" maxlength="3"> -
+                                <input type="text" id="phone2" maxlength="4"> -
+                                <input type="text" id="phone3" maxlength="4">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>우편번호</label>
+                            <div class="zipcode-group">
+                                <input type="text" id="zipcode" placeholder="우편번호">
+                                <button type="button" class="btn-search">검색하기</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>주소</label>
+                            <input type="text" id="address1" placeholder="기본 주소">
+                            <input type="text" id="address2" placeholder="상세 주소" style="margin-top: 10px;">
+                        </div>
+                        <div class="form-group marketing-group">
+                            <label>마케팅 정보 수신 동의</label>
+                            <div class="checkbox-wrap">
+                                <label><input type="checkbox"> 이메일</label>
+                                <label><input type="checkbox"> 문자 메시지</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-links">
+                            <a href="#">비밀번호 변경하기</a>
+                            <a href="#">탈퇴하기</a>
+                        </div>
+                        
+                        <button type="button" class="btn-save">변경 사항 저장하기</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+
+        <div class="mypage-bottom">
+            <section class="mypage-section">
+                <h3>적립금 내역</h3>
+                <div class="points-header">보유 적립금 2,000원</div>
+                <table class="points-table">
+                    <thead>
+                        <tr>
+                            <th>일자</th>
+                            <th>사유</th>
+                            <th>적립금</th>
+                            <th>유형</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>26.04.09</td>
+                            <td>회원 가입 축하</td>
+                            <td>2,000원</td>
+                            <td>지급</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="mypage-section" style="margin-top: 80px;">
+                <h3>재입고 알림 내역</h3>
+                <p class="empty-msg">재입고 알림 내역이 없습니다.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <ul class="footer-links">
+            <li><a href='#'>이용약관</a></li>
+            <li><a href='#'>개인정보처리방침</a></li>
+            <li><a href='#'>사업자정보확인</a></li>
+        </ul>
+        <p>상호: 인적 | 대표: 정유진 | 개인정보관리책임자: 정유진 | 이메일: injukofficial@naver.com</p>
+        <p>주소: 서울시 용산구 두텁바위로40길 3, 1층 | 사업자등록번호: 854-10-02802 | 통신판매: 2025-서울용산-0151</p>
+        <p>Copyright © 2025 인적 All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="motion_script.js"></script>
+    <script src="motion_mypage.js"></script>
+</body>
+</html>
