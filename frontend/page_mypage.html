@@ -34,7 +34,8 @@
             <div class="mypage-left">
                 <section class="mypage-section">
                     <h3>주문 내역</h3>
-                    <p class="empty-msg">주문 내역이 없습니다.</p>
+                    <div id="order-list"></div>
+                    <p class="empty-msg" id="order-empty-msg">주문 내역이 없습니다.</p>
                 </section>
                 <section class="mypage-section">
                     <h3>내가 쓴 글</h3>
@@ -104,8 +105,8 @@
         <div class="mypage-bottom">
             <section class="mypage-section">
                 <h3>적립금 내역</h3>
-                <div class="points-header">보유 적립금 2,000원</div>
-                <table class="points-table">
+                <div class="points-header">보유 적립금 <span id="total-points">0</span></div>
+                <table class="points-table" id="points-table">
                     <thead>
                         <tr>
                             <th>일자</th>
@@ -114,15 +115,10 @@
                             <th>유형</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>26.04.09</td>
-                            <td>회원 가입 축하</td>
-                            <td>2,000원</td>
-                            <td>지급</td>
-                        </tr>
-                    </tbody>
+                    <tbody id="points-list">
+                        </tbody>
                 </table>
+                <p class="empty-msg" id="points-empty-msg" styld="display: none;">적립금 내역이 없습니다.</p>
             </section>
             <section class="mypage-section" style="margin-top: 80px;">
                 <h3>재입고 알림 내역</h3>
